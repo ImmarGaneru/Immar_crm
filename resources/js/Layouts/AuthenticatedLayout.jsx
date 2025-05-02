@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
+    const { auth } = usePage().props;
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
@@ -30,6 +31,15 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+
+                                {auth.user.roles === 'sales' && (
+                                    <NavLink
+                                        href={route('leads.index')}
+                                        active={route().current('leads.index')}
+                                    >
+                                        Leads
+                                    </NavLink>
+                                )}
                             </div>
                         </div>
 

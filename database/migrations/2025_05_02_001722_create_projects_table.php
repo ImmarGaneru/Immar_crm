@@ -12,18 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('lead_id');
-            $table->uuid('product_id');
-            $table->uuid('sales_id');
-            $table->uuid('approved_by')->nullable();
-            $table->string('status');
+            $table->bigIncrements('id')->primary();
+            $table->unsignedBigInteger('lead_id');
+            $table->unsignedBigInteger('product_id');
+            $table->foreignUuid('sales_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignUuid('approved_by')->references('id')->on('users')->onDelete('set null');
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');;
             $table->timestamps();
 
             $table->foreign('lead_id')->references('id')->on('leads')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('sales_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('approved_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

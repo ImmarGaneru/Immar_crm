@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->bigIncrements('id')->primary();
             $table->string('name', 100);
             $table->text('description')->nullable();
-            $table->float('price');
+            $table->decimal('price',10, 2);
             $table->timestamps();
         });
     }

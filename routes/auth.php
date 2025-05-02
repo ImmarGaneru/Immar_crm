@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
+use App\Http\Controllers\Manager\DashboardController as ManagerDashboard;
+use App\Http\Controllers\Sales\DashboardController as SalesDashboard;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -56,4 +59,14 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+});
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+});
+Route::middleware(['auth', 'role:manager'])->prefix('manager')->group(function () {
+    Route::get('/dashboard', [ManagerDashboard::class, 'index'])->name('manager.dashboard');
+});
+Route::middleware(['auth', 'role:sales'])->prefix('sales')->group(function () {
+    Route::get('/dashboard', [SalesDashboard::class, 'index'])->name('sales.dashboard');
 });
