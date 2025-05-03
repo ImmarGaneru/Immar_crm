@@ -56,6 +56,14 @@ export default function AuthenticatedLayout({ header, children }) {
                                         Customers
                                     </NavLink>
                                 )}
+                                {auth.user.roles === 'admin' && (
+                                    <NavLink
+                                        href={route('products.index')}
+                                        active={route().current('products.index')}
+                                    >
+                                        Products
+                                    </NavLink>
+                                )}
 
                             </div>
                         </div>
