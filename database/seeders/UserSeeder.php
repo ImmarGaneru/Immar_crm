@@ -28,5 +28,8 @@ class UserSeeder extends Seeder
             'email' => 'sales@smart.com',
             'roles' => 'sales',
         ]);
+        User::factory()->count(5)->create([
+            'roles' => 'sales',
+        ]);
     }
 }
