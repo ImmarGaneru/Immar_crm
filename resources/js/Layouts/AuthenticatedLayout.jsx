@@ -25,12 +25,30 @@ export default function AuthenticatedLayout({ header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
-                                >
-                                    Dashboard
-                                </NavLink>
+                                {auth.user.roles === 'sales' && (
+                                    <NavLink
+                                        href={route('sales.dashboard')}
+                                        active={route().current('sales.dashboard')}
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                )}
+                                {auth.user.roles === 'admin' && (
+                                    <NavLink
+                                        href={route('admin.dashboard')}
+                                        active={route().current('admin.dashboard')}
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                )}
+                                {auth.user.roles === 'manager' && (
+                                    <NavLink
+                                        href={route('manager.dashboard')}
+                                        active={route().current('manager.dashboard')}
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                )}
 
                                 {auth.user.roles === 'sales' && (
                                     <NavLink
@@ -62,6 +80,14 @@ export default function AuthenticatedLayout({ header, children }) {
                                         active={route().current('products.index')}
                                     >
                                         Products
+                                    </NavLink>
+                                )}
+                                {auth.user.roles === 'admin' && (
+                                    <NavLink
+                                        href={route('users.index')}
+                                        active={route().current('users.index')}
+                                    >
+                                        Users
                                     </NavLink>
                                 )}
 

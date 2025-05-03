@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-export default function Dashboard() {
+export default function Dashboard({ leadCount, acceptedCount, rejectedCount }) {
     return (
         <AuthenticatedLayout
             header={
@@ -15,8 +15,17 @@ export default function Dashboard() {
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
-                            You're logged in!
+                        <div className="bg-white p-6 shadow rounded">
+                            <h3 className="text-lg font-semibold text-gray-700">Total Lead</h3>
+                            <p className="text-3xl font-bold text-blue-600">{leadCount}</p>
+                        </div>
+                        <div className="bg-white p-6 shadow rounded">
+                            <h3 className="text-lg font-semibold text-gray-700">Proyek Diterima</h3>
+                            <p className="text-3xl font-bold text-green-600">{acceptedCount}</p>
+                        </div>
+                        <div className="bg-white p-6 shadow rounded">
+                            <h3 className="text-lg font-semibold text-gray-700">Proyek Ditolak</h3>
+                            <p className="text-3xl font-bold text-red-600">{rejectedCount}</p>
                         </div>
                     </div>
                 </div>
