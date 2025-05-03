@@ -6,6 +6,20 @@ Website berbasis Laravel 11 yang dibuat untuk mengatur data pelanggan perusahaan
 
 **Lalu Immaratul Ardhi Ganeru**
 
+## 🔐 Credential Login
+
+Admin
+Email: admin@smart.com
+password: password
+
+Manager
+Email: manager@smart.com
+password: password
+
+Sales
+Email: sales@smart.com
+password: password
+
 ## 📌 Deskripsi Proyek
 Sistem ini dirancang untuk mengelola calon pelanggan (leads), layanan/produk, dan proyek-proyek layanan internet yang diusulkan oleh tim sales. Setiap user memiliki role tertentu yang memengaruhi hak akses dan fitur yang tersedia.
 
