@@ -8,16 +8,16 @@ Website berbasis Laravel 11 yang dibuat untuk mengatur data pelanggan perusahaan
 
 ## 🔐 Credential Login
 
-Admin
-Email: admin@smart.com
+### Admin
+Email: admin@smart.com\
 password: password
 
-Manager
+### Manager
 Email: manager@smart.com
 password: password
 
-Sales
-Email: sales@smart.com
+### Sales
+Email: sales@smart.com\
 password: password
 
 ## 📌 Deskripsi Proyek
@@ -77,3 +77,26 @@ Sistem ini dirancang untuk mengelola calon pelanggan (leads), layanan/produk, da
    ```bash
    php artisan serve
    npm run dev
+   
+## Halaman
+
+### Landing Page
+![Landing Page](images/landing_page.png)
+
+### Leads (Sales)
+![Leads](images/leads.png)
+
+### Projects (Sales)
+![Projects Sales](images/projects_sales.png)
+
+### Projects (Manager Approval)
+![Projects Manager](images/projects_manager.png)
+
+### Customers (Manager)
+![Customers](images/customers.png)
+
+### Produk (Admin)
+![Products](images/products.png)
+
+### Manajemen User (Admin)
+![Users](images/users.png)
