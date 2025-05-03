@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Foundation\Application;
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:manager')->group(function () {
         Route::put('/projects/{project}/approve', [ProjectController::class, 'approve'])->name('projects.approve');
         Route::put('/projects/{project}/reject', [ProjectController::class, 'reject'])->name('projects.reject');
+        Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
     });
 
 });

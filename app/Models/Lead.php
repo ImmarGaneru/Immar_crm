@@ -20,4 +20,9 @@ class Lead extends Model
     {
         return $this->belongsTo(User::class, 'created_by');
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

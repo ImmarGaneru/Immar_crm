@@ -40,12 +40,23 @@ export default function AuthenticatedLayout({ header, children }) {
                                         Leads
                                     </NavLink>
                                 )}
-                                <NavLink
-                                    href={route('projects.index')}
-                                    active={route().current('projects.index')}
-                                >
-                                    Projects
-                                </NavLink>
+                                {auth.user.roles !== 'admin' && (
+                                    <NavLink
+                                        href={route('projects.index')}
+                                        active={route().current('projects.index')}
+                                    >
+                                        Projects
+                                    </NavLink>
+                                )}
+                                {auth.user.roles === 'manager' && (
+                                    <NavLink
+                                        href={route('customers.index')}
+                                        active={route().current('customers.index')}
+                                    >
+                                        Customers
+                                    </NavLink>
+                                )}
+
                             </div>
                         </div>
 

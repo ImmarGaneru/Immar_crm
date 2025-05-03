@@ -11,4 +11,8 @@ class Product extends Model
         'price',
         'description',
     ];
+
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
 }
