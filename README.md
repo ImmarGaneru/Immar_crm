@@ -40,7 +40,7 @@ Sistem ini dirancang untuk mengelola calon pelanggan (leads), layanan/produk, da
 
 ### 🗄️ Database Diagram
 
-![database](images/database.png)
+![database](images/Database.png)
 
 ## 🛠️ Teknologi yang Digunakan
 - Laravel 11
