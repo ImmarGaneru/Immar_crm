@@ -40,7 +40,7 @@ Sistem ini dirancang untuk mengelola calon pelanggan (leads), layanan/produk, da
 
 ### 🗄️ Database Diagram
 
-![database](images/database.png)
+![database](images/Database.png)
 
 ## 🛠️ Teknologi yang Digunakan
 - Laravel 11
@@ -48,7 +48,6 @@ Sistem ini dirancang untuk mengelola calon pelanggan (leads), layanan/produk, da
 - PostgreSQL
 - Tailwind CSS
 - Laravel Breeze (autentikasi)
-- Role management manual (tanpa package eksternal)
 
 ## 🚀 Cara Menjalankan
 1. Clone repositori:
